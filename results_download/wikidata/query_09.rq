@@ -1,0 +1,13 @@
+#title: What are the compounds known to have a relationship to things linked to subclasses of cell-cell signalling (Q14758911) biological process (P682) ?
+SELECT DISTINCT (SUBSTR(?structure_inchikey, 1 , 14 ) AS ?structure_inchikey_short) ?structure (GROUP_CONCAT(DISTINCT ?c_c_sLabel; SEPARATOR = "|") AS ?signalling) WHERE {
+  VALUES ?cell_cell_signalling {
+    wd:Q14758911
+  }
+  ?c_c_s wdt:P279 ?cell_cell_signalling.
+  ?s wdt:P682 ?c_c_s.
+  ?structure ?p ?s;
+    wdt:P235 ?structure_inchikey.
+  ?c_c_s rdfs:label ?c_c_sLabel.
+  FILTER((LANG(?c_c_sLabel)) = "en")
+}
+GROUP BY ?structure ?structure_inchikey

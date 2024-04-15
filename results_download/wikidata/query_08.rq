@@ -1,0 +1,29 @@
+#title: What are the compounds that are similar (0.9) to compounds treating gram positive bacterial infections (Q55789782) ?
+PREFIX sachem: <http://bioinfo.uochb.cas.cz/rdf/v1.0/sachem#>
+PREFIX idsm: <https://idsm.elixir-czech.cz/sparql/endpoint/>
+SELECT DISTINCT (SUBSTR(?structure_inchikey, 1 , 14 ) AS ?structure_inchikey_short) ?structure (GROUP_CONCAT(DISTINCT ?infectionLabel; SEPARATOR = "|") AS ?infection) WHERE {
+  SERVICE idsm:wikidata {
+    VALUES ?CUTOFF {
+      "0.9"^^xsd:double
+    }
+    SERVICE <https://query.wikidata.org/bigdata/namespace/wdq/sparql> {
+      VALUES ?disease {
+        wd:Q55789782
+      }
+      ?infection (wdt:P279*) ?disease.
+      { ?structure wdt:P2175 ?infection. }
+      UNION
+      { ?infection wdt:P2176 ?structure. }
+      ?structure wdt:P233 ?structure_smiles;
+        wdt:P235 ?structure_inchikey.
+      ?infection rdfs:label ?infectionLabel.
+      FILTER((LANG(?infectionLabel)) = "en")
+    }
+    ?compound sachem:similarCompoundSearch [
+      sachem:query ?structure_smiles;
+      sachem:cutoff ?CUTOFF
+    ].
+  }
+  hint:Prior hint:runFirst "true"^^xsd:boolean.
+}
+GROUP BY ?structure ?structure_inchikey

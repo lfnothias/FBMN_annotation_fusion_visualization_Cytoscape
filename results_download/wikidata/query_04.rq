@@ -1,0 +1,20 @@
+#title: Which compounds corresponding to a mass of 324.0602 ± 10ppm are found in which organism(s)?
+SELECT DISTINCT (SUBSTR(?structure_inchikey, 1 , 14 ) AS ?structure_inchikey_short) ?structure ?structure_mf (GROUP_CONCAT(?taxon_name; SEPARATOR = ", ") AS ?organism) WITH {
+  SELECT ?structure WHERE {
+    VALUES ?query {
+      "324.0602"^^xsd:decimal
+    }
+    VALUES ?ppm {
+      "10"^^xsd:decimal
+    }
+    ?structure wdt:P2067 ?mass.
+    FILTER((?mass > (?query - ((?ppm * "0.000001"^^xsd:decimal) * ?query))) && (?mass < (?query + ((?ppm * "0.000001"^^xsd:decimal) * ?query))))
+  }
+} AS %structures WHERE {
+  INCLUDE %structures
+  ?structure (wdt:P703/wdt:P225) ?taxon_name;
+    wdt:P235 ?structure_inchikey;
+    wdt:P274 ?structure_mf.
+}
+GROUP BY ?structure ?structure_inchikey ?structure_mf
+LIMIT 1000

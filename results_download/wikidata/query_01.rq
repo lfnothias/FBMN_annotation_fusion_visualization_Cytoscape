@@ -1,0 +1,17 @@
+#title: What are the compounds found in Pseudomonas aeruginosa (Q31856)? Define them by their canonical SMILES, isomeric SMILES, InChI, InChIKey 
+SELECT DISTINCT ?structure ?structure_smiles_canonical ?structure_smiles_isomeric ?structure_inchi ?structure_inchikey ?organism WHERE {
+  {
+    SELECT ?taxon ?organism WHERE {
+      VALUES ?taxon {
+        wd:Q31856
+      }
+      ?taxon wdt:P225 ?organism.
+    }
+  }
+  hint:Prior hint:runFirst TRUE.
+  ?structure wdt:P233 ?structure_smiles_canonical; 
+             wdt:P234 ?structure_inchi;
+             wdt:P235 ?structure_inchikey; 
+    wdt:P703 ?taxon.
+  OPTIONAL {?structure wdt:P2017 ?structure_smiles_isomeric}
+}

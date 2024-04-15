@@ -1,0 +1,15 @@
+#title: What are the compounds found in Pseudomonas (Q131143) or children taxa?
+SELECT DISTINCT (SUBSTR(?structure_inchikey, 1 , 14 ) AS ?structure_inchikey_short) ?structure ?organism WHERE {
+  {
+    SELECT ?child ?organism WHERE {
+      VALUES ?taxon {
+        wd:Q131143
+      }
+      ?child (wdt:P171*) ?taxon;
+        wdt:P225 ?organism.
+    }
+  }
+  hint:Prior hint:runFirst "true"^^xsd:boolean.
+  ?structure wdt:P235 ?structure_inchikey;
+    wdt:P703 ?child.
+}

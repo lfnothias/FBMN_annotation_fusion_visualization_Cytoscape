@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?><wizard>
+    <wiz_part part="DATA_IMPORT" preset="Data">
+        <parameter name="Metadata file" selected="true">
+            <current_file>D:\mzio\OneDrive - mzio GmbH\mzio\Example data\Thermo\Adriano_data_workshop\metadata_PA.tsv</current_file>
+            <last_file>D:\mzio\OneDrive - mzio GmbH\mzio\Example data\Thermo\Adriano_data_workshop\metadata_PA.tsv</last_file>
+        </parameter>
+        <parameter name="File names">
+            <file>D:\mzio\OneDrive - mzio GmbH\mzio\Example data\Thermo\Adriano_data_workshop\171103_PMA_TK_PA14_03.mzML</file>
+            <file>D:\mzio\OneDrive - mzio GmbH\mzio\Example data\Thermo\Adriano_data_workshop\171103_PMA_TK_PA14_04.mzML</file>
+            <file>D:\mzio\OneDrive - mzio GmbH\mzio\Example data\Thermo\Adriano_data_workshop\171103_PMA_TK_PA14_05.mzML</file>
+            <file>D:\mzio\OneDrive - mzio GmbH\mzio\Example data\Thermo\Adriano_data_workshop\171103_PMA_TK_PA14_06.mzML</file>
+            <file>D:\mzio\OneDrive - mzio GmbH\mzio\Example data\Thermo\Adriano_data_workshop\171103_PMA_TK_QC_01.mzML</file>
+            <file>D:\mzio\OneDrive - mzio GmbH\mzio\Example data\Thermo\Adriano_data_workshop\171103_PMA_TK_QC_02.mzML</file>
+            <file>D:\mzio\OneDrive - mzio GmbH\mzio\Example data\Thermo\Adriano_data_workshop\171103_PMA_TK_QC_03.mzML</file>
+            <file>D:\mzio\OneDrive - mzio GmbH\mzio\Example data\Thermo\Adriano_data_workshop\171103_PMA_TK_QC_04.mzML</file>
+            <file>D:\mzio\OneDrive - mzio GmbH\mzio\Example data\Thermo\Adriano_data_workshop\171103_PMA_TK_QC_05.mzML</file>
+            <file>D:\mzio\OneDrive - mzio GmbH\mzio\Example data\Thermo\Adriano_data_workshop\171103_PMA_TK_QC_06.mzML</file>
+            <file>D:\mzio\OneDrive - mzio GmbH\mzio\Example data\Thermo\Adriano_data_workshop\171103_PMA_TK_QC_07.mzML</file>
+            <file>D:\mzio\OneDrive - mzio GmbH\mzio\Example data\Thermo\Adriano_data_workshop\171103_PMA_TK_QC_08.mzML</file>
+            <file>D:\mzio\OneDrive - mzio GmbH\mzio\Example data\Thermo\Adriano_data_workshop\171103_PMA_TK_M1_01.mzML</file>
+            <file>D:\mzio\OneDrive - mzio GmbH\mzio\Example data\Thermo\Adriano_data_workshop\171103_PMA_TK_M1_02.mzML</file>
+            <file>D:\mzio\OneDrive - mzio GmbH\mzio\Example data\Thermo\Adriano_data_workshop\171103_PMA_TK_M1_03.mzML</file>
+            <file>D:\mzio\OneDrive - mzio GmbH\mzio\Example data\Thermo\Adriano_data_workshop\171103_PMA_TK_M1_04.mzML</file>
+            <file>D:\mzio\OneDrive - mzio GmbH\mzio\Example data\Thermo\Adriano_data_workshop\171103_PMA_TK_M1_05.mzML</file>
+            <file>D:\mzio\OneDrive - mzio GmbH\mzio\Example data\Thermo\Adriano_data_workshop\171103_PMA_TK_M1_06.mzML</file>
+            <file>D:\mzio\OneDrive - mzio GmbH\mzio\Example data\Thermo\Adriano_data_workshop\171103_PMA_TK_media_02.mzML</file>
+            <file>D:\mzio\OneDrive - mzio GmbH\mzio\Example data\Thermo\Adriano_data_workshop\171103_PMA_TK_media_03.mzML</file>
+            <file>D:\mzio\OneDrive - mzio GmbH\mzio\Example data\Thermo\Adriano_data_workshop\171103_PMA_TK_media_04.mzML</file>
+            <file>D:\mzio\OneDrive - mzio GmbH\mzio\Example data\Thermo\Adriano_data_workshop\171103_PMA_TK_media_05.mzML</file>
+            <file>D:\mzio\OneDrive - mzio GmbH\mzio\Example data\Thermo\Adriano_data_workshop\171103_PMA_TK_media_06.mzML</file>
+            <file>D:\mzio\OneDrive - mzio GmbH\mzio\Example data\Thermo\Adriano_data_workshop\171103_PMA_TK_PA14_01.mzML</file>
+            <file>D:\mzio\OneDrive - mzio GmbH\mzio\Example data\Thermo\Adriano_data_workshop\171103_PMA_TK_PA14_02.mzML</file>
+        </parameter>
+    </wiz_part>
+    <wiz_part part="ION_INTERFACE" preset="UHPLC">
+        <parameter name="Smoothing">true</parameter>
+        <parameter name="Stable ionization across samples">true</parameter>
+        <parameter name="Crop retention time">
+            <min>0.3</min>
+            <max>30.0</max>
+        </parameter>
+        <parameter name="Max peaks in chromatogram">15</parameter>
+        <parameter name="Minimum consecutive scans">6</parameter>
+        <parameter name="Approximate feature FWHM" unit="MINUTES">0.04</parameter>
+        <parameter name="RT tolerance (intra-sample)" unit="MINUTES">0.04</parameter>
+        <parameter name="RT tolerance (sample-to-sample)" unit="MINUTES">0.1</parameter>
+    </wiz_part>
+    <wiz_part part="IMS" preset="NO_IMS">
+        <parameter name="IMS active">false</parameter>
+        <parameter name="Smoothing">true</parameter>
+        <parameter name="IMS type">none</parameter>
+        <parameter name="Minimum consecutive scans">5</parameter>
+        <parameter name="Approximate feature FWHM">0.01</parameter>
+    </wiz_part>
+    <wiz_part part="MS" preset="Orbitrap">
+        <parameter name="Ion mode">Positive</parameter>
+        <parameter choices="ABSOLUTE_NOISE_LEVEL,FACTOR_OF_LOWEST_SIGNAL" ms1_level="5.0" msn_level="2.5" name="Noise threshold" selected_value="FACTOR_OF_LOWEST_SIGNAL"/>
+        <parameter name="Minimum feature height">500000.0</parameter>
+        <parameter name="m/z tolerance (scan-to-scan)">
+            <absolutetolerance>0.002</absolutetolerance>
+            <ppmtolerance>10.0</ppmtolerance>
+        </parameter>
+        <parameter name="m/z tolerance (intra-sample)">
+            <absolutetolerance>0.0015</absolutetolerance>
+            <ppmtolerance>3.0</ppmtolerance>
+        </parameter>
+        <parameter name="m/z tolerance (sample-to-sample)">
+            <absolutetolerance>0.0015</absolutetolerance>
+            <ppmtolerance>5.0</ppmtolerance>
+        </parameter>
+    </wiz_part>
+    <wiz_part part="FILTER" preset="Filters">
+        <parameter name="Original feature list">REMOVE</parameter>
+        <parameter name="Min samples per aligned feature">
+            <abs>3</abs>
+            <rel>0.0</rel>
+        </parameter>
+        <parameter name="Only keep features with 13C">true</parameter>
+    </wiz_part>
+    <wiz_part part="ANNOTATION" preset="Annotation">
+        <parameter name="Local compound database search" selected="false">
+            <parameter name="Database file">
+                <current_file>D:\git\mzio_mzmine</current_file>
+                <last_file>D:\git\mzio_mzmine</last_file>
+            </parameter>
+            <parameter name="Use precursor m/z">as calculated from neutral mass (or formula/smiles) + ions</parameter>
+            <parameter name="Filename column (for library generation)" selected="false">filename</parameter>
+            <parameter name="Columns">
+                <importtype column="neutral mass" datatype="io.github.mzmine.datamodel.features.types.numbers.NeutralMassType" selected="true"/>
+                <importtype column="mz" datatype="io.github.mzmine.datamodel.features.types.numbers.PrecursorMZType" selected="true"/>
+                <importtype column="rt" datatype="io.github.mzmine.datamodel.features.types.numbers.RTType" selected="true"/>
+                <importtype column="formula" datatype="io.github.mzmine.datamodel.features.types.annotations.formula.FormulaType" selected="true"/>
+                <importtype column="smiles" datatype="io.github.mzmine.datamodel.features.types.annotations.SmilesStructureType" selected="true"/>
+                <importtype column="inchi" datatype="io.github.mzmine.datamodel.features.types.annotations.InChIStructureType" selected="false"/>
+                <importtype column="inchi key" datatype="io.github.mzmine.datamodel.features.types.annotations.InChIKeyStructureType" selected="false"/>
+                <importtype column="name" datatype="io.github.mzmine.datamodel.features.types.annotations.CompoundNameType" selected="false"/>
+                <importtype column="CCS" datatype="io.github.mzmine.datamodel.features.types.numbers.CCSType" selected="false"/>
+                <importtype column="mobility" datatype="io.github.mzmine.datamodel.features.types.numbers.MobilityType" selected="false"/>
+                <importtype column="comment" datatype="io.github.mzmine.datamodel.features.types.annotations.CommentType" selected="true"/>
+                <importtype column="adduct" datatype="io.github.mzmine.datamodel.features.types.annotations.iin.IonTypeType" selected="false"/>
+                <importtype column="PubChemCID" datatype="io.github.mzmine.modules.dataprocessing.id_localcsvsearch.PubChemIdType" selected="false"/>
+                <importtype column="molecular_class" datatype="io.github.mzmine.datamodel.features.types.annotations.compounddb.MolecularClassType" selected="false"/>
+            </parameter>
+        </parameter>
+        <parameter name="Annotate lipids">true</parameter>
+        <parameter name="Spectral library files">
+            <file>D:\Data\lib\MoNA-export-LC-MS-MS_Positive_Mode.json</file>
+        </parameter>
+    </wiz_part>
+    <wiz_part part="WORKFLOW" preset="DDA">
+        <parameter name="Apply spectral networking (FBMN/IIMN)">true</parameter>
+        <parameter name="Export path" selected="true">
+            <current_file>D:\workshop\mzmine_results</current_file>
+            <last_file>D:\workshop\mzmine_results</last_file>
+        </parameter>
+        <parameter name="Export for molecular networking (e.g., GNPS, FBMN, IIMN, MetGem)">true</parameter>
+        <parameter name="Export for SIRIUS">true</parameter>
+        <parameter name="Export annotation graphics">false</parameter>
+    </wiz_part>
+</wizard>

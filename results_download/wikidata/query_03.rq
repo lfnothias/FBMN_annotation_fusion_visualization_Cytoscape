@@ -1,0 +1,15 @@
+#title: What are the compounds found in Pseudomonas aeruginosa (Q31856) for which we have a spectrum.
+SELECT DISTINCT ?spectrum WHERE {
+  {
+    SELECT ?taxon ?organism WHERE {
+      VALUES ?taxon {
+        wd:Q31856
+      }
+      ?taxon wdt:P225 ?organism.
+    }
+  }
+  hint:Prior hint:runFirst "true"^^xsd:boolean.
+  ?structure p:P235 ?structure_inchikey;
+    wdt:P703 ?taxon;
+    (wdt:P4964|wdt:P6689|wdt:P12472) ?spectrum.
+}

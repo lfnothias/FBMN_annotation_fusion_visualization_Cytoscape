@@ -1,0 +1,13 @@
+files:
+  pattern: comp_ms_prague
+  features:
+    raw: data/source/mzmine_results_iimn_gnps_quant.csv
+  metadata:
+    raw: data/source/metadata_PA.tsv
+  spectral:
+    raw: data/source/mzmine_results_iimn_gnps.mgf
+ms:
+  polarity: pos
+organisms: {}
+options:
+  summarise: yes

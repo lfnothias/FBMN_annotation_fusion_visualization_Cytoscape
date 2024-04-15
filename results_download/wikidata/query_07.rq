@@ -1,0 +1,27 @@
+#title: What are the compounds that are similar (0.9) to siderophores (Q424747) or iron chelating agents (Q50349216) ?
+PREFIX sachem: <http://bioinfo.uochb.cas.cz/rdf/v1.0/sachem#>
+PREFIX idsm: <https://idsm.elixir-czech.cz/sparql/endpoint/>
+SELECT DISTINCT (SUBSTR(?structure_inchikey, 1 , 14 ) AS ?structure_inchikey_short) ?structure (GROUP_CONCAT(DISTINCT ?siderophoreLabel; SEPARATOR = "|") AS ?siderophore) WHERE {
+  SERVICE idsm:wikidata {
+    VALUES ?CUTOFF {
+      "0.9"^^xsd:double
+    }
+    VALUES ?siderophore {
+      wd:Q424747
+      wd:Q50349216
+    }
+    SERVICE <https://query.wikidata.org/bigdata/namespace/wdq/sparql> {
+      ?structure wdt:P2868 ?siderophore;
+        wdt:P233 ?structure_smiles;
+        wdt:P235 ?structure_inchikey.
+      ?siderophore rdfs:label ?siderophoreLabel.
+      FILTER((LANG(?siderophoreLabel)) = "en")
+    }
+    ?compound sachem:similarCompoundSearch[
+      sachem:query ?structure_smiles;
+      sachem:cutoff ?CUTOFF
+    ].
+  }
+  hint:Prior hint:runFirst "true"^^xsd:boolean.
+}
+GROUP BY ?structure ?structure_inchikey

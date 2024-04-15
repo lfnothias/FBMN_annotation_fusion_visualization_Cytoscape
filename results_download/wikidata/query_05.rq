@@ -1,0 +1,8 @@
+#title: What are the compounds that are subclasses of Rhamnolipids (Q104640345)?
+SELECT DISTINCT (SUBSTR(?structure_inchikey, 1 , 14 ) AS ?structure_inchikey_short) ?structure WHERE {
+  VALUES ?substructure {
+    wd:Q104640345
+  }
+  ?structure (wdt:P279*) ?substructure;
+    wdt:P235 ?structure_inchikey.
+}
