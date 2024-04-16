@@ -1,4 +1,4 @@
-# FBMN_annotation_fusion_visualization_Cytoscape
+# FBMN annotation fusion and visualization in Cytoscape
 FBMN annotation fusion and visualization in Cytoscape
 
 ### Run the notebook
